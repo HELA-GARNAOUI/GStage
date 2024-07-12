@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html" class="logo"><img src="C:\xampp\htdocs\gestion de stagiaire\neural bey.png"></a>
+        <a href="reception.html">Réception des candidatures</a>
+        <a href="candidatures.html">Gestion des candidatures</a>
+        <a href="stagiaires.html">Gestion des stagiaires</a>
+        <a href="taches.html">Affectation des tâches</a>
+        <a href="communication.html">Communication</a>
+    </div>
+    <div class="container">
+        <h1>Gestion des candidatures</h1>
+      
+        <form id="filterForm" method="POST" action="candidature.php" >
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" id="filterName" class="form-control" placeholder="Nom">
+                </div>
+                <div class="col">
+                    <input type="text" id="filterPrenom" class="form-control" placeholder="Prénom">
+                </div>
+                <div class="col">
+                    <input type="text" id="filterFiliere" class="form-control" placeholder="Filière">
+                </div>
+                <div class="col">
+                    <input type="text" id="filterKeywords" class="form-control" placeholder="Mots clés">
+                </div>
+                <div class="col">
+                    <select id="filterStatut" class="form-control">
+                        <option value="">Statut</option>
+                        <option value="en attente">En attente</option>
+                        <option value="accepté">Accepté</option>
+                        <option value="refusé">Refusé</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="fetchCandidatures()">Rechercher</button>
+                </div>
+            </div>
+        </form>
+        <div id="candidatureList">
+            <!-- La liste des candidatures sera générée ici -->
+        </div>
+        <div class="mt-5">
+            <h2>Liste des Candidatures</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                        <th>Filière</th>
+                        <th>Statut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="candidatureList">
+                    <!-- Les candidatures seront affichées ici -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script3.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
